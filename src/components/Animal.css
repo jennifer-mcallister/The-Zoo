@@ -1,0 +1,25 @@
+img {
+    object-fit: contain;
+    width: 15em;
+    height: 15em;
+    background-color: black;
+}
+
+p {
+    width: 13em;
+}
+
+.animal-container {
+    width: 20em;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: pink;
+    color: black;
+}
+
+.animal-container:hover {
+    background-color: antiquewhite;
+}

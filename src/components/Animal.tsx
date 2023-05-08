@@ -2,6 +2,7 @@ import { SyntheticEvent, useEffect, useState } from "react"
 import { IAnimal } from "../models/IAnimal"
 import "./Animal.css";
 import { useTimer } from "../hooks/useTimer";
+import { Notis } from "./Notis";
 
 export interface IAnimalProps {
     animal: IAnimal
@@ -15,6 +16,7 @@ export const Animal = ({animal, allAnimals, fullView}: IAnimalProps) => {
     
     const [currentAnimal, setAnimal] = useState({...animal});
     const timer = useTimer({startDate: currentAnimal.lastFed});
+
 
     const handleError = (e: SyntheticEvent<HTMLImageElement>) => {
         e.currentTarget.src = placeholder;
@@ -57,6 +59,7 @@ export const Animal = ({animal, allAnimals, fullView}: IAnimalProps) => {
     if (fullView) {
         return (
            <>
+           
             <div className="animal-container__profile">
                 <h2>{currentAnimal.name}</h2>
                 <div className="image-container">
@@ -73,6 +76,7 @@ export const Animal = ({animal, allAnimals, fullView}: IAnimalProps) => {
         )
     } else {
         return (
+            <>
             <div className="animals-container">
                     <div className="animal-container">
                         <h2>{currentAnimal.name}</h2>
@@ -83,6 +87,7 @@ export const Animal = ({animal, allAnimals, fullView}: IAnimalProps) => {
                         <p>{currentAnimal.shortDescription}</p> 
                     </div>   
             </div>
+            </>
         )
     }
 }

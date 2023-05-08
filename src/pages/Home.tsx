@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { IAnimalsResponse } from "../models/IAnimalsResponse";
+import { Notis } from "../components/Notis";
 
 export const Home = () => {
     const [animals, setAnimals] = useState(JSON.parse(localStorage.getItem("animals") || "[]") as IAnimal[]);
@@ -29,12 +30,21 @@ export const Home = () => {
     
     return (
         <div className="home-content">
-            <h1>My Zoo</h1>
+          
+            <div className="animals-container">
             {animals.map((a, index)=> (
                 <Link key={index} to={a.id.toString()}>
                     <Animal animal={a} allAnimals={animals} fullView={false}></Animal>
                 </Link>
             ))}
+            </div>
+            <div className="notis-container">
+            {animals.map((a, index) => (
+                <div key={index}>
+                    <Notis animal={a}></Notis>
+                </div>
+            ))}
+            </div>
         </div>
     )
 }

@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Animal } from "../components/Animal";
 import { IAnimalsResponse } from "../models/IAnimalsResponse";
+import { Link } from "react-router-dom";
+import { Notis } from "../components/Notis";
 
 export const AnimalView = () => {
     const params = useParams();
@@ -31,9 +33,18 @@ export const AnimalView = () => {
     
     if (currentAnimal) { 
         return (
+            <>
+            <div className="notis-container">
+            {animals.map((a, index) => (
+                <div key={index}>
+                    <Notis animal={a}></Notis>
+                </div>
+            ))}
+            </div>
             <div className="animalview-content">
                 <Animal animal={currentAnimal} allAnimals={animals} fullView={true}></Animal>
             </div>
+            </>
         )
     } else {
         return (

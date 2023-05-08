@@ -5,9 +5,7 @@ img {
     background-color: black;
 }
 
-p {
-    width: 13em;
-}
+
 
 .animal-container {
     width: 20em;
@@ -22,4 +20,42 @@ p {
 
 .animal-container:hover {
     background-color: antiquewhite;
+}
+
+.animal-container__profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 40vw;
+
+}
+
+.image-container {
+    position: relative;
+}
+
+.full {
+    width: 3em;
+    height: 3em;
+    background-color: lightgreen;
+    border-radius: 50%;
+
+    position: absolute;  
+    top: -1.5em;
+    left: -1.5em;
+
+}
+
+.hungry {
+    width: 3em;
+    height: 3em;
+    background-color: crimson;
+    border-radius: 50%;
+
+    position: absolute;  
+    top: -1.5em;
+    left: -1.5em;
+    
 }

@@ -66,11 +66,14 @@ export const Animal = ({animal, allAnimals, fullView}: IAnimalProps) => {
                     <div className={currentAnimal.isFed ? "full" : "hungry" }></div>
                     <img src={currentAnimal.imageUrl} onError={handleError}></img>
                 </div>
+                <p>Latinsktnamn: {currentAnimal.latinName}</p>
+                <p>Medicin: {currentAnimal.medicine}</p>
+                <p>Född: {currentAnimal.yearOfBirth}</p>
                 <p>{currentAnimal.longDescription}</p>
             </div>
             <div>
                 <p>{currentAnimal.lastFed.toString()}</p>
-                <button type="button" disabled={currentAnimal.isFed} onClick={handleClick}>Feed</button>
+                <button type="button" disabled={currentAnimal.isFed} onClick={handleClick}>Mata mig</button>
             </div>   
            </>
         )

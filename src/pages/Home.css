@@ -11,13 +11,12 @@
 }
 
 .animals-container {
-    width: 80vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 3em
+    gap: 3em;
 }
 
 .notis-container {

@@ -18,7 +18,7 @@ export const Notis = ({animal}: INotisProps) => {
     }
     
     useEffect (() => {
-        if(timer.min >= 4) {
+        if(timer.h >= 4) {
             setNotification(true);
         }
         
@@ -27,7 +27,7 @@ export const Notis = ({animal}: INotisProps) => {
     if (notification && !animal.isFed) { return (
         <div className="container">
             <img src={animal.imageUrl} onError={handleError} className="notis-img"/>
-            <p>{animal.name}: Feed me!</p>
+            <p>{animal.name}: Mata mig!</p>
         </div>
         )    
     } else {
